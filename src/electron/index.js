@@ -1,11 +1,13 @@
 import { app, BrowserWindow } from 'electron';
 import serve from 'electron-serve';
+import { join } from 'path';
 
 const isdev = !app.isPackaged || (process.env.NODE_ENV == 'development');
 
 const base = isdev ? '../../build' : '.';
 
-const loadURL = serve({ directory: base, file: 'index' });
+// const loadURL = serve({ directory: join(base, 'project') });
+const loadURL = serve({ directory: base, file: 'project' });
 
 const createWindow = () => {
   // Create the browser window.
