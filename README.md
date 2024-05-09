@@ -6,5 +6,6 @@ npm i
 ```
 
 ```sh
-npm run dev
+npm run build:svelte
+npm run dev:electron
 ```
