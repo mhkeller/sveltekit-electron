@@ -1,10 +1,11 @@
 import { app, BrowserWindow } from 'electron';
-import path from 'node:path';
-const __dirname = import.meta.dirname;
+import serve from 'electron-serve';
 
 const isdev = !app.isPackaged || (process.env.NODE_ENV == 'development');
 
-const base = isdev ? '../../build' : '../../';
+const base = isdev ? '../../build' : '.';
+
+const loadURL = serve({ directory: base, file: 'index' });
 
 const createWindow = () => {
   // Create the browser window.
@@ -21,7 +22,7 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, base, 'index.html'));
+  loadURL(mainWindow);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
