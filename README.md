@@ -5,6 +5,7 @@ This repo contains two configurations for setting up SvelteKit with Electron.
 
 1. The `main` branch uses `mainWindow.loadFile`
 2. The `serve` branch uses [electron-serve](https://github.com/sindresorhus/electron-serve)
+2. The `adapter-node` branch uses [@sveltejs/adapter-node](https://www.npmjs.com/package/@sveltejs/adapter-node)
 
 Both rely on `prerender=true` and `ssr=true` in the Svelteit layout config. 
 
